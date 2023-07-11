@@ -6,6 +6,15 @@ public class Main {
         Währungsrechner rubelRechner = new Währungsrechner(0.0101);
         Währungsrechner yenRechner = new Währungsrechner(0.0065);
 
+        /* Feature Requests:
+         * a) Eine Schleife im Hauptprogramm, um mehrere Beträge umrechnen zu können
+         *    Bei Eingabe von 0 wird die Schleife verlassen.
+         * b) Die Währungsbezeichnung soll als weiteres Attribut zum Währungsrechner
+         *    ergänzt werden, damit in der Methode ausgabeWährung der Parameter weg-
+         *    gelassen werden kann und durch den Aufruf von getWährungsbezeichnung()
+         *    angefragt werden kann.
+         */
+
         Scanner eingabe = new Scanner(System.in);
         System.out.print("Bitte Betrag eingeben: ");
         double betrag = eingabe.nextDouble();
