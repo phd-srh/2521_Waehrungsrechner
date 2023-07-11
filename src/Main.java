@@ -11,7 +11,7 @@ public class Main {
         double dollarBetrag = dollarRechner.inFremd(betrag);
         double euroBetrag   = dollarRechner.inEuro(betrag);
 
-        System.out.println(betrag + " in Euro sind " + dollarBetrag + " Dollar");
-        System.out.println(betrag + " in Dollar sind " + euroBetrag + " Euro");
+        System.out.println(betrag + " Euro sind " + dollarBetrag + " Dollar");
+        System.out.println(betrag + " Dollar sind " + euroBetrag + " Euro");
     }
 }
