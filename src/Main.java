@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         Währungsrechner dollarRechner = new Währungsrechner(0.91);
@@ -9,6 +10,7 @@ public class Main {
         /* Feature Requests:
          * a) Eine Schleife im Hauptprogramm, um mehrere Beträge umrechnen zu können
          *    Bei Eingabe von 0 wird die Schleife verlassen.
+         *    => erledigt
          * b) Die Währungsbezeichnung soll als weiteres Attribut zum Währungsrechner
          *    ergänzt werden, damit in der Methode ausgabeWährung der Parameter weg-
          *    gelassen werden kann und durch den Aufruf von getWährungsbezeichnung()
@@ -16,12 +18,15 @@ public class Main {
          */
 
         Scanner eingabe = new Scanner(System.in);
-        System.out.print("Bitte Betrag eingeben: ");
-        double betrag = eingabe.nextDouble();
+        while (true) {
+            System.out.print("Bitte Betrag eingeben (mit 0 beenden): ");
+            double betrag = eingabe.nextDouble();
+            if (Math.abs(betrag) < 0.000001) break;
 
-        ausgabeWährung(dollarRechner, betrag, "Dollar");
-        ausgabeWährung(rubelRechner, betrag, "Rubel");
-        ausgabeWährung(yenRechner, betrag, "Yen");
+            ausgabeWährung(dollarRechner, betrag, "Dollar");
+            ausgabeWährung(rubelRechner, betrag, "Rubel");
+            ausgabeWährung(yenRechner, betrag, "Yen");
+        }
     }
 
     private static void ausgabeWährung(Währungsrechner währungsrechner,
